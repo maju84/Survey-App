@@ -6,26 +6,7 @@ import { map, shareReplay } from 'rxjs/operators';
 @Component({
   selector: 'app-app-shell',
   templateUrl: './app-shell.component.html',
-  styles: [`
-    .sidenav-container {
-      height: 100%;
-    }
-    
-    .sidenav {
-      width: 200px;
-    }
-    
-    .sidenav {
-      background: inherit;
-    }
-    
-    .mat-toolbar.mat-primary {
-      position: sticky;
-      top: 0;
-      z-index: 1;
-    }
-    
-  `]
+  styleUrls: ['./app-shell.component.scss']
 })
 export class AppShellComponent {
 
