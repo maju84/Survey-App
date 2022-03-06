@@ -25,3 +25,8 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Architecture Decision Records (ADR) regarding ng client
+
+- core.module.ts: well suited for a potential later versioning: instead of dumping everything into the default app.module.ts. <br>
+Example: for a possible complete different ui version we could provide a core2.module.ts in parallel
