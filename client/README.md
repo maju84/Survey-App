@@ -33,3 +33,6 @@ Example: for a possible complete different ui version we could provide a core2.m
 
 - super lean app.module.ts: we strip off the central app.module.ts as far as possible for a "quick "startup / first load" experience. <br> 
 By using a PreloadingStrategy we set the stage for background loading of sub -pages / modules (, aiming for a good "offline first experience").
+
+- dedicated feature/create-survey module: future stuff is registered at this module, not the central app module <br>
+-> supports our chosen lazy / backround loading approach

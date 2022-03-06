@@ -5,7 +5,9 @@
       [opened]="(isHandset$ | async) === false">
     <mat-toolbar color="primary">Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item routerLink="" routerLinkActive="mat-list-single-selected-option">Overview</a>
+      <a mat-list-item routerLink="" routerLinkActive="mat-list-single-selected-option"
+        [routerLinkActiveOptions]="{ exact: true }">Overview</a>
+      <a mat-list-item routerLink="create-survey" routerLinkActive="mat-list-single-selected-option">Create Survey</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>

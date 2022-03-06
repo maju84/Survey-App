@@ -5,7 +5,10 @@ import { AppShellComponent } from './_layouts/app-shell/app-shell.component';
 
 const routes: Routes = [
   { path: '', component: AppShellComponent, children: [
-    { path: '', component: SurveyOverviewComponent }  
+    { path: '', component: SurveyOverviewComponent },
+    { path: 'create-survey', 
+      loadChildren: () => import( './features/create-survey/create-survey.module')
+        .then(module => module.CreateSurveyModule)}  
   ] },
   { path: '**', redirectTo: '' }
 ];
