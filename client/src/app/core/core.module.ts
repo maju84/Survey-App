@@ -1,12 +1,15 @@
+import { LayoutModule } from '@angular/cdk/layout';
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from '../shared/material.module';
 
 
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule
+  exports: [
+    MaterialModule,
+    BrowserAnimationsModule,
+    LayoutModule,
   ]
 })
 export class CoreModule { }

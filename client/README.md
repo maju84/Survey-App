@@ -30,3 +30,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 - core.module.ts: well suited for a potential later versioning: instead of dumping everything into the default app.module.ts. <br>
 Example: for a possible complete different ui version we could provide a core2.module.ts in parallel
+
+- super lean app.module.ts: we strip off the central app.module.ts as far as possible for a "quick "startup / first load" experience. <br> 
+By using a PreloadingStrategy we set the stage for background loading of sub -pages / modules (, aiming for a good "offline first experience").
