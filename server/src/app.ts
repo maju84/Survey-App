@@ -1,10 +1,9 @@
 import express from 'express';
+import api from './api/api';
 
 const app = express();
 app.use(express.json());
 
-app.get('/test', async (request, response) => {
-  response.status(200).json({ smile: ":-)" });
-});
+app.use('/api', api);
 
 export default app;
