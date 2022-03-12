@@ -9,4 +9,9 @@ router.get('/', (request, response) => {
   });
 });
 
+router.options('/', (request, response) => {
+  response.header('Allow', 'GET,OPTIONS');
+  response.sendStatus(200);
+});
+
 export default router;
