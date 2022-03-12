@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import { CreateSurveyValidator } from './create-survey-validator.service';
 
 @Component({
   selector: 'app-create-survey',
@@ -11,14 +12,15 @@ export class CreateSurveyComponent implements OnInit {
 
   surveyForm = this.fb.group({    
     question: ['', Validators.required]
-
+  }, {
+    validators: [this.createSurveyValidator.atLeastTwoAnswers()]
   });
 
-  hasUnitNumber = false;
 
- 
+  constructor(private fb: FormBuilder, 
+    private createSurveyValidator: CreateSurveyValidator
+    ) {}
 
-  constructor(private fb: FormBuilder) {}
   ngOnInit(): void {
     for (let index = 0; index < this.answersCount; ++index) {
       this.surveyForm.setControl('answer-' +index, new FormControl() ); 
@@ -26,7 +28,7 @@ export class CreateSurveyComponent implements OnInit {
   }
 
   addAnswer(): void {
-    this.surveyForm.setControl('answer-' +this.answersCount, new FormControl() );
+    this.surveyForm.setControl('answer-' + this.answersCount, new FormControl() );
     this.answersCount++;
   }
 
