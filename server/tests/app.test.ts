@@ -13,7 +13,8 @@ describe(`${API}/`, () => {
   test("should respond with GET,OPTIONS Allowed in header ", async () => {
     const response = await request(app).options(`${API}/`);
     expect(response.statusCode).toBe(200);
-    expect(response.header.Allow).toBe('GET,OPTIONS');
+    expect(response.headers['allow']).toBe('GET,OPTIONS');
   });
+
 
 });
