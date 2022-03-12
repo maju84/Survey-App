@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "rootDir": "./src",
+    "declaration": true,
+    "esModuleInterop": true,
+    "lib": [ "esnext" ],
+    "module": "commonjs",
+    "outDir": "./build",
+    "resolveJsonModule": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "noImplicitAny": true,
+    "sourceMap": true,
+    "target": "es2019"
+  },
+  "include": [
+    "./src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "build"
+  ]
+}
+  
