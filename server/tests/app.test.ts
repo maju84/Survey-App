@@ -10,4 +10,10 @@ describe(`${API}/`, () => {
     expect(response.body.surveys).toContain("http");
   });
 
+  test("should respond with GET,OPTIONS Allowed in header ", async () => {
+    const response = await request(app).options(`${API}/`);
+    expect(response.statusCode).toBe(200);
+    expect(response.header.Allow).toBe('GET,OPTIONS');
+  });
+
 });
