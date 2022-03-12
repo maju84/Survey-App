@@ -14,10 +14,13 @@
       <div class="row" *ngFor="let formControl of [].constructor(answersCount); let i = index;">
         <div class="col">
           <mat-form-field class="full-width">
-            <input matInput placeholder="Answer {{i+1}}" formControlName="answer">
+            <input matInput placeholder="Answer {{i+1}}" formControlName="answer-{{i}}">
           </mat-form-field>
         </div>        
       </div>
+      <mat-error *ngIf="surveyForm.errors?.['atLeastTwoAnswers'] && surveyForm.touched">
+        At least two answers.
+      </mat-error>
       <button mat-raised-button color="primary" type="button" (click)="addAnswer()">Add answer</button>
     </mat-card-content>
     <mat-card-actions>
