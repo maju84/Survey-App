@@ -1,0 +1,31 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "backend server of the survey app",
+  "contributors": [
+    {
+      "name": "maju84"
+    }
+  ],
+  "private": false,
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maju84/Survey-App"
+  },
+  "keywords": [
+    "mongoDB",
+    "express",
+    "node"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/maju84/Survey-App/issues"
+  },
+  "homepage": "https://github.com/maju84/Survey-App#readme"
+}
