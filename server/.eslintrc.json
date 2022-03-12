@@ -8,14 +8,16 @@
   "root": true,
   "parser": "@typescript-eslint/parser",
   "plugins": [
-      "@typescript-eslint"
+      "@typescript-eslint",
+      "no-loops"
   ],
   "rules": {
     "@typescript-eslint/indent": ["error", 2],
     "@typescript-eslint/no-unused-vars": "error",
     "@typescript-eslint/no-explicit-any": "error", 
-    "no-console": "off",
-    "prefer-template": "off"
+    "no-console": "warn",
+    "prefer-template": "warn",
+    "no-loops/no-loops": "warn"
   }
 
 }
