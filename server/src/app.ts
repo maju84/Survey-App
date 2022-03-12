@@ -1,9 +1,9 @@
 import express from 'express';
-import api from './api/api';
+import { apiRouter, URL_API } from './api/api';
 
 const app = express();
 app.use(express.json());
 
-app.use('/api', api);
+app.use(URL_API, apiRouter);
 
 export default app;
