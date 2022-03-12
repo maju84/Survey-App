@@ -3,7 +3,7 @@
     "eslint:recommended",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
-    "airbnb"
+    "plugin:import/typescript"
   ],
   "root": true,
   "parser": "@typescript-eslint/parser",
@@ -17,7 +17,6 @@
     "@typescript-eslint/no-explicit-any": "error", 
     "no-console": "warn",
     "prefer-template": "warn",
-    "no-loops/no-loops": "warn"
+    "no-loops/no-loops": "warn"    
   }
-
 }
