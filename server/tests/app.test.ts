@@ -7,19 +7,23 @@ import app from "../src/app";
 
 describe(`${URL_API}/`, () => {
 
-  test("should respond with a 200 and contain certain string", async () => {
+  test("GET should respond with a 200 and contain certain string", async () => {
     const response = await request(app).get(`${URL_API}/`);
     expect(response.statusCode).toBe(200);
-    expect(response.body.surveys).toContain("http");
+    expect(response.body.surveys.endsWith(`${URL_API}${URL_SURVEYS}`)).toBeTruthy();
   });
 
-  test("should respond with GET,OPTIONS 'allow'ed in header", async () => {
+  test("OPTIONS should respond with GET,OPTIONS 'allow'ed in header", async () => {
     const response = await request(app).options(`${URL_API}/`);
     expect(response.statusCode).toBe(200);
     expect(response.headers['allow']).toBe('GET,OPTIONS');
   });
 
-  test("should respond with a 201 and return back request data ", async () => {
+});
+
+describe(`${URL_API}${URL_SURVEYS}/`, () => {
+
+  test("POST should respond with a 201 and return requested data", async () => {
     const surveyData = {
       "question": "w00t?!",
       "answer-0": "first answer",

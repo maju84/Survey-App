@@ -6,12 +6,11 @@ export const URL_API = "/api";
 
 apiRouter.use(URL_SURVEYS, surveysRouter);
 
-apiRouter.get('/', (request, response, next) => {
+apiRouter.get('/', (request, response) => {
   response.status(200).json({
     // eslint-disable-next-line quotes
-    surveys: `http:/...`,
+    surveys: `http://${request.headers.host}${URL_API}${URL_SURVEYS}`
   });
-  next();
 });
 
 apiRouter.options('/', (request, response) => {
