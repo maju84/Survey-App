@@ -10,8 +10,9 @@
   ```
 
 2. Recommended:
-- Docker
-- Insomnia (or Postman, curl)
+- Docker https://www.docker.com/ 
+- Insomnia REST client https://insomnia.rest/ (or Postman, curl)
+- yEd graph editor https://www.yworks.com/products/yed
 
 3. Install the npm packages
    ```bash
@@ -19,6 +20,10 @@
    ```
 
 4. Configure environment variables
-  Copy `.env.example` contents into `.env` and `.env.test.local` and replace the values. <p>
-  Both `.env` and `.env.test.local` files are listed in `.gitignore`.
+- Copy `.env.example` contents into `.env` and `.env.test.local` and replace the values. <p>
+- Both `.env` and `.env.test.local` files are listed in `.gitignore`.
+
+5. misc contents
+- /insomnia contains collection for insomnia rest client
+- /docu contains diagrams created with yEd 
   
