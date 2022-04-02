@@ -12,4 +12,4 @@ connectToDB({ mongoDbUrl: connectionString }).then(() => {
 }).catch(error => {
   console.error(error);
   process.exit();
-})
+});

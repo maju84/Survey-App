@@ -1,21 +1,16 @@
-import { Db, MongoClient } from 'mongodb';
+import { MongoClient } from 'mongodb';
 import { ENV_VAR } from '../config';
+import { MongoClientAndDb } from './MongoClientAndDbDefinition';
 
 const defaultDbName = ENV_VAR.MONGODB_DB_NAME;
 
-export interface MongoClientAndDb {
-  mongoClient: MongoClient,
-  mongoDb: Db
-}
-
 let mongoClientAndDb: MongoClientAndDb;
 
-export const getMongoDb = () => {
+const getMongoDb = () => {
   return mongoClientAndDb?.mongoDb;
 }
 
-
-export const connectToDB = async ({ mongoDbUrl, databaseName=defaultDbName }: {
+const connectToDB = async ({ mongoDbUrl, databaseName=defaultDbName }: {
   mongoDbUrl: string,
   databaseName?: string
 }): Promise<MongoClientAndDb> => {
@@ -41,3 +36,8 @@ export const connectToDB = async ({ mongoDbUrl, databaseName=defaultDbName }: {
     // await client.close()
   }  
 }
+
+export {
+  getMongoDb,
+  connectToDB,
+};
