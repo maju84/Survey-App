@@ -30,7 +30,6 @@ const connectToDB = async ({ mongoDbUrl, databaseName=defaultDbName }: {
     return { mongoClient, mongoDb };
 
   } finally {
-
     // fixme
     // Ensures that the client will close when you finish/error
     // await client.close()
