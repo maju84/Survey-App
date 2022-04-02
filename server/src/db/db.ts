@@ -1,3 +1,4 @@
+import { flaschenpost } from 'flaschenpost';
 import { MongoClient } from 'mongodb';
 import { ENV_VAR } from '../config';
 import { MongoClientAndDb } from './MongoClientAndDbDefinition';
@@ -9,6 +10,8 @@ let mongoClientAndDb: MongoClientAndDb;
 const getMongoDb = () => {
   return mongoClientAndDb?.mongoDb;
 }
+
+const logger = flaschenpost.getLogger();
 
 const connectToDB = async ({ mongoDbUrl, databaseName=defaultDbName }: {
   mongoDbUrl: string,
@@ -24,7 +27,7 @@ const connectToDB = async ({ mongoDbUrl, databaseName=defaultDbName }: {
     // Establish and verify connection
     const mongoDb = mongoClient.db(databaseName);
     await mongoDb.command({ ping: 1 });
-    console.log("Connected successfully to database.", databaseName);
+    logger.info(`Connected successfully to database ${databaseName}.`);
 
     mongoClientAndDb = { mongoClient, mongoDb };
     return { mongoClient, mongoDb };

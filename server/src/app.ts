@@ -8,4 +8,4 @@ app.use(express.json());
 
 app.use(URL_API, apiRouter);
 
-export default app;
+export { app };
