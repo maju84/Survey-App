@@ -1,7 +1,7 @@
 import supertest from "supertest";
 import { URL_API } from "../src/api/api";
 import { URL_SURVEYS } from "../src/api/surveys/surveys";
-import app from "../src/app";
+import { app } from "../src/app";
 
 const request = supertest(app);
 
@@ -13,10 +13,10 @@ describe(`${URL_API}/`, () => {
     expect(response.body.surveys.endsWith(`${URL_API}${URL_SURVEYS}`)).toBeTruthy();
   });
 
-  test("OPTIONS should respond with GET,OPTIONS 'allow'ed in header", async () => {
+  test("OPTIONS should respond with GET,POST,OPTIONS 'allow'ed in header", async () => {
     const response = await request.options(`${URL_API}/`);
     expect(response.statusCode).toBe(200);
-    expect(response.headers['allow']).toBe('GET,OPTIONS');
+    expect(response.headers['allow']).toBe('GET,POST,OPTIONS');
   });
 
 });

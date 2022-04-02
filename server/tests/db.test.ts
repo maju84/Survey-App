@@ -2,7 +2,7 @@ import request from 'supertest';
 import { ObjectId } from 'mongodb';
 import { MongoMemoryServer } from 'mongodb-memory-server';
 
-import app from '../src/app';
+import { app } from '../src/app';
 import { MongoClientAndDb } from '../src/db/MongoClientAndDbDefinition';
 import { connectToDB  } from '../src/db/db';
 

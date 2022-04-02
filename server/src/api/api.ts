@@ -14,7 +14,7 @@ apiRouter.get('/', (req, res) => {
 });
 
 apiRouter.options('/', (request, response) => {
-  response.header('Allow', 'GET,OPTIONS');
+  response.header('Allow', 'GET,POST,OPTIONS');
   response.sendStatus(200);
 });
 
