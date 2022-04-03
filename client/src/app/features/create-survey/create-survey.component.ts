@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { CreateSurveyValidator } from './create-survey-validator';
+import { CreateSurveyService } from './create-survey.service';
 
 @Component({
   selector: 'app-create-survey',
@@ -17,8 +18,10 @@ export class CreateSurveyComponent implements OnInit {
   });
 
 
-  constructor(private fb: FormBuilder, 
-    private createSurveyValidator: CreateSurveyValidator
+  constructor(
+    private fb: FormBuilder, 
+    private createSurveyValidator: CreateSurveyValidator,
+    private createSurveyService: CreateSurveyService,
     ) {}
 
   ngOnInit(): void {
@@ -33,6 +36,9 @@ export class CreateSurveyComponent implements OnInit {
   }
 
   onSubmit(): void {
+    console.log(this.surveyForm.value);
+    // todo preprocess values 
+    this.createSurveyService.create(this.surveyForm.value);
     alert('Thanks!');
   }
 }
