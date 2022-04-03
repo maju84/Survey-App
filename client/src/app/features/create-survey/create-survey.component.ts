@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
-import { CreateSurveyValidator } from './create-survey-validator.service';
+import { CreateSurveyValidator } from './create-survey-validator';
 
 @Component({
   selector: 'app-create-survey',
